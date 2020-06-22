@@ -14,9 +14,3 @@ Spark allows you to specify many different [configurations options](https://spar
 ### `SparkSession` initialisation
 
 This starter contains the initialisation code for `SparkSession` in the `ProjectContext` by reading the configuration from `/conf/base/spark.yml`. You should modify this code if you want to further customise your `SparkSession`, e.g. configuring it to use YARN.
-
-### Usage of `MemoryDataSet` when working with Spark objects
-
-Out of the box, `MemoryDataSet` works with Spark's `DataFrame`. However, it doesn't work with other Spark's objects such as machine learning models without further configuration. This starter demonstrates how you can configure `MemoryDataSet` for a Spark's machine learning model in the `catalog.yml`.
-
-Note that the use of `MemoryDataSet` is encouraged to propagate Spark's `DataFrame` between nodes in the pipeline. A best practice is delay triggering Spark actions for as long as needed to take advantage of the Spark's lazy evaluation.
