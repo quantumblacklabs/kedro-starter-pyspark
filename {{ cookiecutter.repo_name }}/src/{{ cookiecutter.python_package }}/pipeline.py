@@ -33,16 +33,6 @@ from typing import Dict
 
 from kedro.pipeline import Pipeline
 
-from {{ cookiecutter.python_package }}.pipelines import data_engineering as de
-from {{ cookiecutter.python_package }}.pipelines import data_science as ds
-
-#-----------------------------------------------------------------------#
-# Here you can find an example pipeline, made of two modular pipelines. #
-#                                                                       #
-# Delete this when you start working on your own Kedro project as       #
-# well as pipelines/data_science AND pipelines/data_engineering         #
-#-----------------------------------------------------------------------#
-
 
 def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
     """Create the project's pipeline.
@@ -55,11 +45,6 @@ def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
 
     """
 
-    data_engineering_pipeline = de.create_pipeline()
-    data_science_pipeline = ds.create_pipeline()
-
     return {
-        "de": data_engineering_pipeline,
-        "ds": data_science_pipeline,
-        "__default__": data_engineering_pipeline + data_science_pipeline,
+        "__default__": Pipeline([]),
     }
