@@ -1,4 +1,4 @@
-# Kedro Starter: PySpark
+# The `kedro-starter-pyspark` Kedro starter
 
 ## Introduction
 
