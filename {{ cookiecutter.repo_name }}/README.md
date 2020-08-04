@@ -62,7 +62,7 @@ After this, if you'd like to update your project requirements, please update `sr
 
 ## How to work with Kedro and notebooks
 
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `proj_dir`, `proj_name`, `conf`, `io`, `parameters` and `startup_error`.
+> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `context`, `catalog`, and `startup_error`.
 
 ### Jupyter
 To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
