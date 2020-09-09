@@ -27,17 +27,13 @@
 # limitations under the License.
 
 """Application entry point."""
-import getpass
 from pathlib import Path
 from typing import Any, Dict, Union
 
 from kedro.framework.context import KedroContext, load_package_context
-from kedro.pipeline import Pipeline
 
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
-
-from {{ cookiecutter.python_package }}.pipeline import create_pipelines
 
 
 class ProjectContext(KedroContext):
@@ -75,9 +71,6 @@ class ProjectContext(KedroContext):
     # `project_version` is the version of kedro used to generate the project
     project_version = "{{ cookiecutter.kedro_version }}"
     package_name = "{{ cookiecutter.python_package }}"
-
-    def _get_pipelines(self) -> Dict[str, Pipeline]:
-        return create_pipelines()
 
 
 def run_package():
